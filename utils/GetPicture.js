@@ -65,8 +65,9 @@ function getData(sourceUrl ='' , getType ='') {
             let imags = [];
 
             puppeteer.launch({
-                // headless: true
-                headless: false
+                   args: ['--no-sandbox', '--disable-setuid-sandbox'],
+                headless: true
+                // headless: false
             }).then(async browser => {
 
                 const page = await browser.newPage();
